@@ -1,0 +1,23 @@
+[package]
+name = "towns-protocol-gandalf"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+towns-protocol-contracts = { workspace = true }
+towns-protocol-types = { workspace = true }
+
+clap = {version = "4.5", features = ["derive", "env"]}
+tokio = { version = "1.39", features = ["full"] }
+eyre = { workspace = true }
+alloy-primitives = {workspace = true}
+alloy-rpc-types = {workspace = true}
+alloy-provider = {workspace = true}
+alloy-sol-types = { workspace = true }

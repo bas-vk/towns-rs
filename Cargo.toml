@@ -1,0 +1,85 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.lints]
+rust.missing_debug_implementations = "warn"
+rust.missing_docs = "allow"
+rust.unreachable_pub = "warn"
+rust.unused_must_use = "deny"
+rust.rust_2018_idioms = "deny"
+rustdoc.all = "warn"
+
+[workspace.package]
+version = "0.0.0-alpha.0"
+edition = "2024"
+rust-version = "1.87"
+license = "Apache-2.0"
+repository = "https://github.com/towns-rs/towns"
+exclude = [".github/"]
+
+[workspace.lints.clippy]
+branches_sharing_code = "warn"
+clear_with_drain = "warn"
+derive_partial_eq_without_eq = "warn"
+empty_line_after_outer_attr = "warn"
+equatable_if_let = "warn"
+imprecise_flops = "warn"
+iter_on_empty_collections = "warn"
+iter_with_drain = "warn"
+large_stack_frames = "warn"
+manual_clamp = "warn"
+mutex_integer = "warn"
+needless_pass_by_ref_mut = "warn"
+nonstandard_macro_braces = "warn"
+or_fun_call = "warn"
+path_buf_push_overwrite = "warn"
+read_zero_byte_vec = "warn"
+redundant_clone = "warn"
+suboptimal_flops = "warn"
+suspicious_operation_groupings = "warn"
+trailing_empty_array = "warn"
+trait_duplication_in_bounds = "warn"
+transmute_undefined_repr = "warn"
+trivial_regex = "warn"
+tuple_array_conversions = "warn"
+uninhabited_references = "warn"
+unused_peekable = "warn"
+unused_rounding = "warn"
+useless_let_if_seq = "warn"
+as_ptr_cast_mut = "allow"
+cognitive_complexity = "allow"
+collection_is_never_read = "allow"
+debug_assert_with_mut_call = "allow"
+empty_line_after_doc_comments = "allow"
+fallible_impl_from = "allow"
+future_not_send = "allow"
+iter_on_single_items = "allow"
+missing_const_for_fn = "allow"
+needless_collect = "allow"
+non_send_fields_in_send_ty = "allow"
+option_if_let_else = "allow"
+redundant_pub_crate = "allow"
+significant_drop_in_scrutinee = "allow"
+significant_drop_tightening = "allow"
+string_lit_as_bytes = "allow"
+type_repetition_in_bounds = "allow"
+unnecessary_struct_initialization = "allow"
+use_self = "allow"
+
+[workspace.dependencies]
+towns-protocol-contracts = { path = "crates/contracts" }
+towns-protocol-types = { path = "crates/types" }
+
+alloy = { version = "1.0.3", features = ["full"] }
+alloy-eips = "1.0.3"
+alloy-sol-macro = { version="1.0.3", features = ["json"] }
+alloy-sol-types = "1.0.3"
+alloy-rpc-types = "1.0.3"
+alloy-primitives = "1.1.0"
+alloy-provider = "1.0.3"
+alloy-contract = "1.0.3"
+
+thiserror = "2.0"
+eyre = "0.6"
+hex = "0.4"
